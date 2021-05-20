@@ -12,18 +12,18 @@ Now, to build the model, we define a class named as Network which initializes th
 
 Now, to train the model, we first create a network with 2 hidden layers given by Network([784, 30, 30, 10]) where the first parameter is the dimension of the input data and hence the first layer is the input layer, the second and third layers correspond to the hidden layers with 30 neurons each, and the fourth layer corresponds to the output layer with 10 nodes corresponding to the 10 class labels. Next, we call the sgd function which creates mini batches for the data and passes to the ’update mini batch’ function. The update mini batch function initiates backpropagation for each data point in the mini batch and updates the weights and biases of the network. Finally, the error and accuracy are calculated in the sgd function and are printed with respect to each epoch. The losses and accuracies of each epoch are also appended in an array and returned so that the learning curve of the model can be visualized. After trial and error, the best results for this model were obtained by keeping the learning rate = 1.0, the batch size = 10, and the number of epochs were restricted to 10 for faster training of the model. As a side note, the learning rate reduces to ’0.1’ since the weights and biases are updated by a factor of (learning rate/batch size) . A higher accuracy can be achieved by increasing the number of epochs and lowering the learning rate which could result in slow computations. The results for the model were achieved as given below where we obtain an accuracy of 95% on the train data and 94% on the test data.
 
-(add image)
+<img src="Results/Training.png" width="75%" height="75%">
 
 The loss curves for the train and test data were obtained as:
 
-(add image)
+<img src="Results/Train_loss.png" width="35%" height="35%">
 
-(add image)
+<img src="Results/Test_loss.png" width="35%" height="35%">
 
 Here, as we see, the loss for the train and test data decreases monotonically over each epoch and thus increases the performance of the model.
 
 Similarly, we can see that the accuracies of both the train and test data also increase monotonically, thus signifying an increase in the performance of the model.
 
-(add image)
+<img src="Results/Train_acc.png" width="35%" height="35%">
 
-(add image)
+<img src="Results/Test_acc.png" width="35%" height="35%">
